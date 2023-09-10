@@ -1,9 +1,14 @@
 ﻿// Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 
-public static void Task27()
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        //static void Task29()
         {
             var ar = new string[8];
-           
+
             for (int i = 0; i < 8; i++)
             {
                 Console.Write($"Введите {i} элемент массива: ");
@@ -18,3 +23,5 @@ public static void Task27()
 
             Console.WriteLine($"[{string.Join(", ", ar.Where(s => !string.IsNullOrEmpty(s)))}]");
         }
+    }
+}
