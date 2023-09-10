@@ -1,30 +1,41 @@
 ﻿// Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 
-Console.WriteLine("Введите положительные трехзначные числа");
-int size = Convert.ToInt32(Console.ReadLine());
-int[] numbers = new int[size];
-int count = 0;
-FillArrayRandomNumbers(numbers);
-PrintArray(numbers);
-for (int i = 0; i < numbers.Length; i++)
+int[] CreateArrayRndInt(int size, int min, int max)
 {
-    if (numbers[i] % 2 == 0)
-    count++;
-}
-Console.WriteLine($"количество чётных чисел в массиве -> {count} ");
+    int[] arr = new int[size];
+    Random rnd = new Random();
 
-void FillArrayRandomNumbers(int[] array)
-{
-    for(int i = 0; i < array.Length; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
-        array[i] = new Random().Next(100,999);
+        arr[i] = rnd.Next(min, max + 1);
     }
+    return arr;
 }
-void PrintArray(int[] array)
+void PrintArray(int [] arr)
 {
-    for(int i = 0; i < array.Length; i++)
+    Console.Write("[");
+    for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write(array[i] + " ");
+        if (i< arr.Length - 1) Console.Write($"{arr[i]}, ");
+        else Console.Write($"{arr[i]}");
     }
-    Console.WriteLine();
+    Console.Write("]");
 }
+
+int CountEvenNumbers(int[] arr)
+{
+    int count = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] % 2 == 0) 
+        count++;
+    }
+    return count;
+}
+
+int [] array = CreateArrayRndInt(10, 100, 999);
+PrintArray(array);
+Console.WriteLine();
+
+int countEvenNumbers = CountEvenNumbers(array);
+Console.WriteLine($"Количество четных числе в массиве - {countEvenNumbers}");
