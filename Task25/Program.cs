@@ -1,7 +1,7 @@
 ﻿
 // Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
 
-int numbers (int A, int B)
+int Numbers (int A, int B)
 {
     if (A == 0) return 0;
     int res = 1;
@@ -11,9 +11,15 @@ int numbers (int A, int B)
 }
 
   Console.Write("Введите число A: ");
-  int A = Convert.ToInt32(Console.ReadLine());
+  int numA = Convert.ToInt32(Console.ReadLine());
   Console.Write("Введите число B: ");
-  int B = Convert.ToInt32(Console.ReadLine());
+  int numB = Convert.ToInt32(Console.ReadLine());
 
-  int exp = numbers(A, B);
-  Console.WriteLine("Ответ: " + exp);
+  if (numB < 1)
+  {
+    Console.WriteLine("Число В не может быть отрицательным");
+    return;
+  }
+
+  int exp = Numbers(numA, numB);
+  Console.WriteLine($"Число {numA} встепени {numB} равно {exp}");
