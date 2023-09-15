@@ -30,5 +30,5 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int[,] array2d = CreateMatrixSumIndexes(3,4);
-PrintMatrix(array2d);
+int[,] matrix = CreateMatrixSumIndexes(3,4);
+PrintMatrix(matrix);

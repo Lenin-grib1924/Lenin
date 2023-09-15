@@ -46,3 +46,4 @@ PrintMatrix(matrix);
 EvenIndicesInASquare(matrix);
 Console.WriteLine();
 PrintMatrix(matrix);
+
