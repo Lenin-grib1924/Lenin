@@ -65,12 +65,12 @@ void PrintMatrix1(int[,] matrix1)
 {
     for (int i = 0; i < matrix1.GetLength(0); i++)
     {
-        // Console.Write("|   ");
+        Console.Write("|");
         for (int j = 0; j < matrix1.GetLength(1); j++)
         {
-            Console.Write($"{matrix1[i, j], 5}");
+            Console.Write($"{matrix1[i, j], 4}");
         }
-        // Console.WriteLine("   |");
+        Console.WriteLine(" |");
         Console.WriteLine();
     }
 }
@@ -79,20 +79,19 @@ void PrintMatrix2(int[,] matrix2)
 {
     for (int i = 0; i < matrix2.GetLength(0); i++)
     {
-        // Console.Write("|   ");
+        Console.Write("|");
         for (int j = 0; j < matrix2.GetLength(1); j++)
         {
-            Console.Write($"{matrix2[i, j], 5}");
+            Console.Write($"{matrix2[i, j], 4}");
         }
-        // Console.WriteLine("   |");
+         Console.WriteLine(" |");
         Console.WriteLine();
     }
 }
 
 
 void PrintMatrixResult(int[,] result)
-{        // Вывод результирующей матрицы
-
+{ 
         for (int i = 0; i < result.GetLength(0); i++)
         {
             for (int j = 0; j < result.GetLength(1); j++)
@@ -110,9 +109,3 @@ PrintMatrix2(matrix2);
 Console.WriteLine("Результирующая матрица будет:");
 PrintMatrixResult(result);
 
-// int[,] matrix = MultiplyMatrices;
-
-// MultiplyMatrices(matrix);
-
-// int multiplyMatrices = MultiplyMatrices(matrix1, matrix2);
-// Console.Write($"{MultiplyMatrices}");
